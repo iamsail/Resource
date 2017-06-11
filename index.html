@@ -48,27 +48,80 @@
             background: rgba(0, 0, 200, .5);
         }
 
+        .rightText {
+            background: rgba(200, 100, 0, 0.5);
+        }
+
+        .bottomText {
+            background: rgba(0, 200, 0, 0.5);
+        }
+
+
+
 
 
         .left {
-            background: url('./images/2.jpg');
+            background: url('./images/4.jpg');
+            /*background: url('http://t.imgbox.com/KXaGvTFB.jpg');*/
             clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
             background-size: contain;
             position: relative;
         }
 
+        .top {
+            /*background: url('http://t.imgbox.com/KXaGvTFB.jpg');*/
+            background: url('./images/1.jpg');
+            clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+            background-size: contain;
+            position: relative;
+            left: -125px;
+            top: -130px;
+        }
+
+
+        .right {
+            background: url('./images/2.jpg');
+            clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+            background-size: contain;
+            position: relative;
+            top: -352px;
+            left: 256px;
+        }
+
+        .bottom {
+            background: url('./images/3.jpg');
+            clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+            background-size: contain;
+            position: relative;
+            top: -220px;
+            left: -126px;
+        }
     </style>
 </head>
 <body>
-<br><br><br><br><br>
+
+<br><br><br><br>
 
 <div id="left" :class="[imgClass]">
     <p id="text-left" :class="[categoryClass,myTextClass,text]" :style="styleObject">{{ message }}</p>
 </div>
 
+<div id="top" :class="[imgClass]">
+    <p id="text-top" :class="[categoryClass,myTextClass,text]" :style="styleObject">{{ message }}</p>
+</div>
 
+<div id="right" :class="[imgClass]">
+    <p id="text-right" :class="[categoryClass,myTextClass,text]" :style="styleObject">{{ message }}</p>
+</div>
+
+<div id="bottom" :class="[imgClass]">
+    <p id="text-bottom" :class="[categoryClass,myTextClass,text]" :style="styleObject">{{ message }}</p>
+</div>
 
 <script>
+
+
+
     var leftImage = new Vue ({
         el:"#left",
         data: {
@@ -81,11 +134,40 @@
     });
 
 
-    var leftText = new Vue({
-        el:"#text-left"
+    var topImage = new Vue ({
+        el:"#top",
+        data: {
+            imgClass:'top',
+            categoryClass:'textAll',
+            myTextClass:'topText',
+            text:'text',
+            message: "HTML"
+        }
     });
 
-    
+    var rightImage = new Vue ({
+        el:"#right",
+        data: {
+            imgClass:'right',
+            categoryClass:'textAll',
+            myTextClass:'rightText',
+            text:'text',
+            message: "CSS"
+        }
+    });
+
+    var bottomImage = new Vue ({
+        el:"#bottom",
+        data: {
+            imgClass:'bottom',
+            categoryClass:'textAll',
+            myTextClass:'bottomText',
+            text:'text',
+            message: "JavaScript"
+        }
+    });
+
+
 </script>
 </body>
 </html>
