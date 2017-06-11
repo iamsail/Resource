@@ -3,105 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Source | Sail</title>
-    <script src="https://unpkg.com/vue/dist/vue.js"></script>
-    <style>
-        body {
-            margin: 20px auto;
-            text-align: center;
-            font-family: 'Lato';
-            max-width: 640px;
-        }
-
-
-        div {
-            display: inline-block;
-            margin: 50px 0px;
-            width: 250px;
-            height: 250px;
-            border-radius: 200px;
-            filter: grayscale(0.9);
-            cursor: pointer;
-        }
-
-        div:hover {
-            filter: none;
-        }
-
-        div:hover .text {
-            opacity: 1;
-        }
-
-        .textAll {
-            position: absolute;
-            background: rgba(200, 0, 0, 0.5);
-            padding: 20px 0;
-            top: 90px;
-            width: 250px;
-            /*opacity: 0;*/
-            opacity: 0;
-            text-align: center;
-            color: white;
-            font-size: 1.4em;
-        }
-
-        .leftText {
-            background: rgba(0, 0, 200, .5);
-        }
-
-        .rightText {
-            background: rgba(200, 100, 0, 0.5);
-        }
-
-        .bottomText {
-            background: rgba(0, 200, 0, 0.5);
-        }
-
-
-
-
-
-        .left {
-            background: url('./images/4.jpg');
-            /*background: url('http://t.imgbox.com/KXaGvTFB.jpg');*/
-            clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
-            background-size: contain;
-            position: relative;
-        }
-
-        .top {
-            /*background: url('http://t.imgbox.com/KXaGvTFB.jpg');*/
-            background: url('./images/1.jpg');
-            clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
-            background-size: contain;
-            position: relative;
-            left: -125px;
-            top: -130px;
-        }
-
-
-        .right {
-            background: url('./images/2.jpg');
-            clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
-            background-size: contain;
-            position: relative;
-            top: -352px;
-            left: 256px;
-        }
-
-        .bottom {
-            background: url('./images/3.jpg');
-            clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
-            background-size: contain;
-            position: relative;
-            top: -220px;
-            left: -126px;
-        }
-    </style>
+    <link rel="stylesheet" href="./main.css">
 </head>
 <body>
-
 <br><br><br><br>
-
 <div id="left" :class="[imgClass]">
     <p id="text-left" :class="[categoryClass,myTextClass,text]" :style="styleObject">{{ message }}</p>
 </div>
@@ -117,57 +22,7 @@
 <div id="bottom" :class="[imgClass]">
     <p id="text-bottom" :class="[categoryClass,myTextClass,text]" :style="styleObject">{{ message }}</p>
 </div>
-
-<script>
-
-
-
-    var leftImage = new Vue ({
-        el:"#left",
-        data: {
-            imgClass:'left',
-            categoryClass:'textAll',
-            myTextClass:'leftText',
-            text:'text',
-            message: "前端"
-        }
-    });
-
-
-    var topImage = new Vue ({
-        el:"#top",
-        data: {
-            imgClass:'top',
-            categoryClass:'textAll',
-            myTextClass:'topText',
-            text:'text',
-            message: "HTML"
-        }
-    });
-
-    var rightImage = new Vue ({
-        el:"#right",
-        data: {
-            imgClass:'right',
-            categoryClass:'textAll',
-            myTextClass:'rightText',
-            text:'text',
-            message: "CSS"
-        }
-    });
-
-    var bottomImage = new Vue ({
-        el:"#bottom",
-        data: {
-            imgClass:'bottom',
-            categoryClass:'textAll',
-            myTextClass:'bottomText',
-            text:'text',
-            message: "JavaScript"
-        }
-    });
-
-
-</script>
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<script src="./index.js"></script>
 </body>
 </html>
