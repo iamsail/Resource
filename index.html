@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Source | Sail</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <style>
+        body {
+            margin: 20px auto;
+            text-align: center;
+            font-family: 'Lato';
+            max-width: 640px;
+        }
+
+
+        div {
+            display: inline-block;
+            margin: 50px 0px;
+            width: 250px;
+            height: 250px;
+            border-radius: 200px;
+            filter: grayscale(0.9);
+            cursor: pointer;
+        }
+
+        div:hover {
+            filter: none;
+        }
+
+        div:hover .text {
+            opacity: 1;
+        }
+
+        .textAll {
+            position: absolute;
+            background: rgba(200, 0, 0, 0.5);
+            padding: 20px 0;
+            top: 90px;
+            width: 250px;
+            /*opacity: 0;*/
+            opacity: 0;
+            text-align: center;
+            color: white;
+            font-size: 1.4em;
+        }
+
+        .leftText {
+            background: rgba(0, 0, 200, .5);
+        }
+
+
+
+        .left {
+            background: url('./images/2.jpg');
+            clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+            background-size: contain;
+            position: relative;
+        }
+
+    </style>
+</head>
+<body>
+<br><br><br><br><br>
+
+<div id="left" :class="[imgClass]">
+    <p id="text-left" :class="[categoryClass,myTextClass,text]" :style="styleObject">{{ message }}</p>
+</div>
+
+
+
+<script>
+    var leftImage = new Vue ({
+        el:"#left",
+        data: {
+            imgClass:'left',
+            categoryClass:'textAll',
+            myTextClass:'leftText',
+            text:'text',
+            message: "前端"
+        }
+    });
+
+
+    var leftText = new Vue({
+        el:"#text-left"
+    });
+
+    
+</script>
+</body>
+</html>
