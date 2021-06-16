@@ -11,3 +11,10 @@
 - 一切重新开始...
 
 
+
+*********
+
+- https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/matchAll
+- matchAll 对nodejs版本要求大于12.0.0; 否则会报错，需要注意
+
+
