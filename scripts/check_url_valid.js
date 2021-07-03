@@ -36,10 +36,12 @@ const readHtml = async () => {
         const regexp = /"https?:\/\/.+?"/g;
         
         let matches = Array.from(data.matchAll(regexp));
-        
-        // 测试才需要这一行代码
         console.log(`总共有链接 ${matches.length} 条`);
-        matches = matches.slice(0 ,10)
+        
+
+        // 测试才需要这一行代码
+        // matches = matches.slice(0 ,10)
+
 
         for (let [idx, match] of matches.entries()) {
             const url = match[0].slice(1, -1);
