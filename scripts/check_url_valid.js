@@ -38,27 +38,28 @@ const readHtml = async () => {
         let matches = Array.from(data.matchAll(regexp));
         
         // 测试才需要这一行代码
+        console.log(`总共有链接 ${matches.length} 条`);
         matches = matches.slice(0 ,10)
 
-        for (let match of matches) {
+        for (let [idx, match] of matches.entries()) {
             const url = match[0].slice(1, -1);
             try {
-                await validUrl(url);
+                await validUrl(idx, url);
             } catch (e) {
 
             }
-            
         }
     });
 }
 
 
-const validUrl = (url) => {
+const validUrl = (idx, url) => {
     const pro = new Promise((resolve, reject) => {
-        console.log('开始校验url ', url);
+        console.log(`开始校验第${idx + 1}个url: ${url}`);
         axios.get(url)
         .then(res => {
-            console.log(`res--> ${url}请求成功`);
+            console.log(`${url} ok`);
+            console.log(`           `);
             resolve(res);
         }).catch(err => {
             let errlog = url;
@@ -73,12 +74,11 @@ const validUrl = (url) => {
                 console.log(`${url} 网络请求失败 ${err.code} ${err.message}`);
                 errlog = `${url} 网络请求失败 ${err.code} ${err.message}`;
             }
-
+            console.log(`           `);
             fs.writeFile('error.log',  errlog + '\n' , {flag: 'a+'}, function(err) {
                 if (err) {
                     return console.error(err);
                 }
-                console.log("写日志");
             });
             reject()
         })
@@ -91,9 +91,10 @@ const main = () => {
 
     fs.writeFile('error.log',  '' , {flag: 'w'}, function(err) {
         if (err) {
+            console.log("清空error.log文件 失败了！！！！");
             return console.error(err);
         }
-        console.log("清空日志文件");
+        console.log("-------- 清空error.log文件 ---------");
     });
 
     readHtml();
