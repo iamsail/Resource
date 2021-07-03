@@ -1,3 +1,6 @@
+// 本脚本需要node版本>=12,否则matchAll函数会报错
+
+
 const fs = require('fs');
 const axios = require('axios');
 // const axios = require('axios-https-proxy-fix')
@@ -12,7 +15,6 @@ const TUNNEL_OPTIONS = {
     }
 }
 
-
 axios.interceptors.request.use(function (config) {
     config.proxy = false // 强制禁用环境变量中的代理配置
     config.httpAgent = tunnel.httpOverHttp(TUNNEL_OPTIONS)
@@ -20,22 +22,6 @@ axios.interceptors.request.use(function (config) {
     return config
 })
 
-
-console.log('axios ', axios);
-
-
-// const agent = tunnel.httpsOverHttp({
-//     proxy: {
-//         host: '127.0.0.1',
-//         port: 9090,
-//     },
-// });
-
-// console.log('agent ', agent)
-
-const handleHtml = () => {
-
-}
 
 //todo: 需要维护一个白名单，放统计的sdk等
 //需要考虑科学上网
@@ -49,40 +35,42 @@ const readHtml = () => {
     fs.readFile('../index.html', 'utf8', (err, data) => {
         if (err) throw err;
         const regexp = /"https?:\/\/.+?"/g;
+        
         let matches = Array.from(data.matchAll(regexp));
-        matches = matches.slice(0, 2);
+        
+        // 测试才需要这一行代码
+        matches = matches.slice(0 ,1)
 
         matches && matches.forEach((item, idx) => {
-            console.log('itemx ', item[0]);
-            // "http://www.sail.name/"
-            // "https://github.com/iamsail/Resource"
-            axios.options(item[0])
-                .then(res => {
-                    console.log('res--> ', res);
-                })
+            const url = item[0].slice(1, -1);
+            validUrl(url);
         });
     });
 }
 
+const validUrl = (url) => {
+    console.log('validUrl url ', url);
+    axios.get(url)
+    .then(res => {
+        // console.log('res--> ', res.data);
+        console.log(`res--> ${url}请求成功`);
+    }).catch(err => {
+        if (err.code === 'ECONNABORTED' && err.message.indexOf('timeout') >-1) {
+            console.log(`${url} 网络请求超时了, 可能被墙了`)
+        } else {
+            //todo： 这种情况下要不要考虑重新请求一次
+            // 参考文章
+            // https://juejin.cn/post/6844903585751236621 
+            // https://huangwang.github.io/2019/11/11/Axios%E8%AF%B7%E6%B1%82%E8%B6%85%E6%97%B6%E5%A4%84%E7%90%86%E6%96%B9%E6%B3%95/
+            console.log(`${url}网络请求失败 ${err.code} ${err.message}`);
+        }
+    })
+}
+
 const main = () => {
-    // readHtml();
+    readHtml();
 
-    // const urls = [
-    //     // 'https://www.villainhr.com/',
-    //     'http://www.sail.name/',
-    //     // 'https://www.baidu.com/',
-    // ];
-    // urls && urls.forEach((item, idx) => {
-    //     console.log('itemx ', item);
-    //     // "http://www.sail.name/"
-    //     // "https://github.com/iamsail/Resource"
-    //     axios.get(item)
-    //         .then(res => {
-    //             console.log('res--> ', res);
-    //         })
-    // });
-
-
+    // 测试代码
     // let url = 'https://www.baidu.com/';
     // let url = 'https://www.qq.com/';
     // let url = 'http://www.sail.name/';
@@ -90,36 +78,9 @@ const main = () => {
     // let url = 'https://xxx.sail.name/';
     // let url = 'https://kankandou.com/';
     // let url = 'https://www.facebook.com/';
-    let url = 'https://www.google.com/';
-    
-    // axios.options(url, {
-    axios.get(url, {
-        // proxy: {
-        //     // protocol: 'https',
-        //     protocol: 'http',
-        //     host: '127.0.0.1',
-        //     port: 9090,
-        // }
-        
-        // httpsAgent: agent,
-        // httpAgent: agent,
-        // proxy: false, 
-    })
-        .then(res => {
-            console.log('res--> ', res.data);
-        }).catch(err => {
-            // console.log('xxx--> ', xxx);
-            // console.log('xxx--> ', xxx);
-            if (err.code === 'ECONNABORTED' && err.message.indexOf('timeout') >-1) {
-                console.log(`${url} 网络请求超时了, 可能被墙了`)
-            } else {
-                //todo： 这种情况下要不要考虑重新请求一次
-                // 参考文章
-                // https://juejin.cn/post/6844903585751236621 
-                // https://huangwang.github.io/2019/11/11/Axios%E8%AF%B7%E6%B1%82%E8%B6%85%E6%97%B6%E5%A4%84%E7%90%86%E6%96%B9%E6%B3%95/
-                console.log(`${url}网络请求失败 ${err.code} ${err.message}`);
-            }
-        })
+    // let url = 'https://www.google.com/';
+    // validUrl(url);
+
 }
 
 main();
