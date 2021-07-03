@@ -22,7 +22,6 @@ axios.interceptors.request.use(function (config) {
     return config
 })
 
-
 //todo: 需要维护一个白名单，放统计的sdk等
 //需要考虑科学上网
 //处理科学上网的链接
@@ -31,56 +30,83 @@ axios.interceptors.request.use(function (config) {
 // https://janmolak.com/node-js-axios-behind-corporate-proxies-8b17a6f31f9d
 // https://segmentfault.com/a/1190000020008982
 
-const readHtml = () => {
-    fs.readFile('../index.html', 'utf8', (err, data) => {
+const readHtml = async () => {
+    fs.readFile('../index.html', 'utf8', async (err, data) => {
         if (err) throw err;
         const regexp = /"https?:\/\/.+?"/g;
         
         let matches = Array.from(data.matchAll(regexp));
         
         // 测试才需要这一行代码
-        matches = matches.slice(0 ,1)
+        matches = matches.slice(0 ,10)
 
-        matches && matches.forEach((item, idx) => {
-            const url = item[0].slice(1, -1);
-            validUrl(url);
-        });
+        for (let match of matches) {
+            const url = match[0].slice(1, -1);
+            try {
+                await validUrl(url);
+            } catch (e) {
+
+            }
+            
+        }
     });
 }
 
+
 const validUrl = (url) => {
-    console.log('validUrl url ', url);
-    axios.get(url)
-    .then(res => {
-        // console.log('res--> ', res.data);
-        console.log(`res--> ${url}请求成功`);
-    }).catch(err => {
-        if (err.code === 'ECONNABORTED' && err.message.indexOf('timeout') >-1) {
-            console.log(`${url} 网络请求超时了, 可能被墙了`)
-        } else {
-            //todo： 这种情况下要不要考虑重新请求一次
-            // 参考文章
-            // https://juejin.cn/post/6844903585751236621 
-            // https://huangwang.github.io/2019/11/11/Axios%E8%AF%B7%E6%B1%82%E8%B6%85%E6%97%B6%E5%A4%84%E7%90%86%E6%96%B9%E6%B3%95/
-            console.log(`${url}网络请求失败 ${err.code} ${err.message}`);
-        }
-    })
+    const pro = new Promise((resolve, reject) => {
+        console.log('开始校验url ', url);
+        axios.get(url)
+        .then(res => {
+            console.log(`res--> ${url}请求成功`);
+            resolve(res);
+        }).catch(err => {
+            let errlog = url;
+            if (err.code === 'ECONNABORTED' && err.message.indexOf('timeout') >-1) {
+                console.log(`${url} 网络请求超时了, 可能被墙了`)
+                errlog = `${url} 网络请求超时了, 可能被墙了`;
+            } else {
+                //todo： 这种情况下要不要考虑重新请求一次
+                // 参考文章
+                // https://juejin.cn/post/6844903585751236621 
+                // https://huangwang.github.io/2019/11/11/Axios%E8%AF%B7%E6%B1%82%E8%B6%85%E6%97%B6%E5%A4%84%E7%90%86%E6%96%B9%E6%B3%95/
+                console.log(`${url} 网络请求失败 ${err.code} ${err.message}`);
+                errlog = `${url} 网络请求失败 ${err.code} ${err.message}`;
+            }
+
+            fs.writeFile('error.log',  errlog + '\n' , {flag: 'a+'}, function(err) {
+                if (err) {
+                    return console.error(err);
+                }
+                console.log("写日志");
+            });
+            reject()
+        })
+    });
+    return pro;
 }
 
+
 const main = () => {
+
+    fs.writeFile('error.log',  '' , {flag: 'w'}, function(err) {
+        if (err) {
+            return console.error(err);
+        }
+        console.log("清空日志文件");
+    });
+
     readHtml();
 
     // 测试代码
     // let url = 'https://www.baidu.com/';
     // let url = 'https://www.qq.com/';
     // let url = 'http://www.sail.name/';
-    // let url = 'https://tech.meituan.com/';
     // let url = 'https://xxx.sail.name/';
     // let url = 'https://kankandou.com/';
     // let url = 'https://www.facebook.com/';
     // let url = 'https://www.google.com/';
     // validUrl(url);
-
 }
 
 main();
