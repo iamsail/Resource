@@ -6,7 +6,7 @@ const axios = require('axios');
 // const axios = require('axios-https-proxy-fix')
 const tunnel = require('tunnel');
 
-axios.defaults.timeout = 5000;
+axios.defaults.timeout = 8000;
 
 const TUNNEL_OPTIONS = {
     proxy: {
@@ -58,12 +58,14 @@ const readHtml = async () => {
 const validUrl = (idx, url) => {
     const pro = new Promise((resolve, reject) => {
         console.log(`开始校验第${idx + 1}个url: ${url}`);
+        // axios.get(url)
         axios.get(url)
         .then(res => {
             console.log(`${url} ok`);
             console.log(`           `);
             resolve(res);
         }).catch(err => {
+            console.log('err--> ', err, err.status);
             let errlog = url;
             if (err.code === 'ECONNABORTED' && err.message.indexOf('timeout') >-1) {
                 console.log(`${url} 网络请求超时了, 可能被墙了`)
@@ -91,15 +93,14 @@ const validUrl = (idx, url) => {
 
 const main = () => {
 
-    fs.writeFile('error.log',  '' , {flag: 'w'}, function(err) {
-        if (err) {
-            console.log("清空error.log文件 失败了！！！！");
-            return console.error(err);
-        }
-        console.log("-------- 清空error.log文件 ---------");
-    });
-
-    readHtml();
+    // fs.writeFile('error.log',  '' , {flag: 'w'}, function(err) {
+    //     if (err) {
+    //         console.log("清空error.log文件 失败了！！！！");
+    //         return console.error(err);
+    //     }
+    //     console.log("-------- 清空error.log文件 ---------");
+    // });
+    // readHtml();
 
     // 测试代码
     // let url = 'https://www.baidu.com/';
@@ -109,7 +110,9 @@ const main = () => {
     // let url = 'https://kankandou.com/';
     // let url = 'https://www.facebook.com/';
     // let url = 'https://www.google.com/';
-    // validUrl(url);
+
+    let url = 'https://www.tangshuang.net/';
+    validUrl(0, url);
 }
 
 main();
