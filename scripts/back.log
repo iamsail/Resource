@@ -1,0 +1,108 @@
+http://cumtonline.github.io 网络请求失败 undefined Request failed with status code 404
+http://blog.fight2escape.club/ 网络请求失败 ECONNRESET socket hang up
+http://blog.tangjin.name/ 网络请求失败 ECONNRESET socket hang up
+https://blog.xgy666.cn/ 网络请求失败 ECONNRESET read ECONNRESET
+http://www.cumter.cn/ 网络请求失败 ECONNRESET read ECONNRESET
+http://flywinky.top/ 网络请求失败 ECONNRESET socket hang up
+http://wuya00.top/ 网络请求失败 ECONNRESET socket hang up
+https://www.eonboia.com/ 网络请求失败 ECONNRESET Client network socket disconnected before secure TLS connection was established
+http://www.jianshu.com/p/c3dae0951f74 网络请求失败 undefined Request failed with status code 404
+https://www.xiejiancong.com/ 网络请求失败 ERR_TLS_CERT_ALTNAME_INVALID Hostname/IP does not match certificate's altnames: Host: www.xiejiancong.com. is not in the cert's altnames: DNS:www.zqianduan.com, DNS:zqianduan.com
+http://div.io/#/welcome 网络请求超时了, 可能被墙了
+http://www.haomou.net/ 网络请求超时了, 可能被墙了
+http://luuman.github.io/FrontEndGuide/V1/index.html 网络请求失败 undefined Request failed with status code 404
+http://www.css88.com/tool/jQuerySourceViewer/#v=1.7.2&fn= 网络请求失败 ECONNRESET socket hang up
+http://bashooka.com/coding/18-css-clip-path-tutorials-examples-tools/ 网络请求失败 EPROTO write EPROTO 140735800148864:error:1408F10B:SSL routines:ssl3_get_record:wrong version number:../deps/openssl/openssl/ssl/record/ssl3_record.c:332:
+
+http://svgtrick.com/ 网络请求超时了, 可能被墙了
+http://tech.meituan.com/ 网络请求超时了, 可能被墙了
+https://weekly.75team.com/ 网络请求失败 UNABLE_TO_VERIFY_LEAF_SIGNATURE unable to verify the first certificate
+http://efe.baidu.com/ 网络请求失败 EPROTO write EPROTO 140735800148864:error:1408F10B:SSL routines:ssl3_get_record:wrong version number:../deps/openssl/openssl/ssl/record/ssl3_record.c:332:
+
+https://codepen.io/ 网络请求失败 undefined Request failed with status code 403
+http://caniuse.com/ 网络请求失败 EPROTO write EPROTO 140735800148864:error:1408F10B:SSL routines:ssl3_get_record:wrong version number:../deps/openssl/openssl/ssl/record/ssl3_record.c:332:
+
+http://sangka-z.com/react-in-patterns-cn/ 网络请求失败 ECONNRESET socket hang up
+http://www.php100.com/ 网络请求失败 undefined Request failed with status code 503
+http://www.thinkphp.cn 网络请求失败 undefined Request failed with status code 503
+https://leetcode.com/ 网络请求超时了, 可能被墙了
+https://flutterchina.club/ 网络请求失败 ECONNRESET Client network socket disconnected before secure TLS connection was established
+https://www.graphicstock.com/ 网络请求超时了, 可能被墙了
+https://icon.samemoment.com/ 网络请求失败 ECONNRESET Client network socket disconnected before secure TLS connection was established
+http://findicons.com/ 网络请求超时了, 可能被墙了
+http://man.linuxde.net/ 网络请求超时了, 可能被墙了
+http://descloud.io/ 网络请求失败 ECONNRESET socket hang up
+https://mostly-adequate.gitbooks.io/mostly-adequate-guide/ 网络请求超时了, 可能被墙了
+http://functional-programming.cn/ 网络请求失败 ECONNRESET read ECONNRESET
+https://www.lodashjs.com/docs/4.17.5.html 网络请求失败 undefined Request failed with status code 404
+http://www.ywnds.com/ 网络请求失败 undefined Request failed with status code 403
+https://docs.docker.com/ 网络请求失败 ECONNRESET Client network socket disconnected before secure TLS connection was established
+https://blog.lab99.org/post/docker-2016-07-14-faq.html 网络请求失败 ERR_TLS_CERT_ALTNAME_INVALID Hostname/IP does not match certificate's altnames: Host: blog.lab99.org. is not in the cert's altnames: DNS:www.github.com, DNS:*.github.com, DNS:github.com, DNS:*.github.io, DNS:github.io, DNS:*.githubusercontent.com, DNS:githubusercontent.com
+https://docs.scipy.org/doc/numpy-dev/user/quickstart.html 网络请求超时了, 可能被墙了
+http://open.163.com/special/opencourse/machinelearning.html 网络请求失败 undefined Request failed with status code 404
+http://sklearn.lzjqsdd.com/ 网络请求失败 ECONNRESET socket hang up
+http://www.apachecn.org/ 网络请求失败 ERR_TLS_CERT_ALTNAME_INVALID Hostname/IP does not match certificate's altnames: Host: www.apachecn.org. is not in the cert's altnames: DNS:docs.apachecn.org
+http://www.6aiq.com/ 网络请求超时了, 可能被墙了
+https://www.reddit.com/r/MachineLearning/ 网络请求超时了, 可能被墙了
+http://forums.fast.ai/ 网络请求超时了, 可能被墙了
+https://www.kesci.com/apps/home/workspace/help 网络请求超时了, 可能被墙了
+http://www.nowcoder.com/629159 网络请求超时了, 可能被墙了
+http://www.jianshu.com/ 网络请求超时了, 可能被墙了
+https://codingstyle.cn/ 网络请求超时了, 可能被墙了
+http://m.runoob.com/ 网络请求超时了, 可能被墙了
+https://ruby-china.org/sail 网络请求超时了, 可能被墙了
+https://ruby-china.org/sail 网络请求超时了, 可能被墙了
+http://www.imooc.com/ 网络请求超时了, 可能被墙了
+http://www.csdn.net/ 网络请求超时了, 可能被墙了
+https://www.shiyanlou.com/ 网络请求超时了, 可能被墙了
+https://www.coursera.org/ 网络请求超时了, 可能被墙了
+https://medium.freecodecamp.com/ 网络请求超时了, 可能被墙了
+http://www.ituring.com.cn/ 网络请求失败 EPROTO write EPROTO 140735800148864:error:1408F10B:SSL routines:ssl3_get_record:wrong version number:../deps/openssl/openssl/ssl/record/ssl3_record.c:332:
+
+http://numerhero.github.io/ 网络请求失败 undefined Request failed with status code 404
+http://www.css88.com/ 网络请求超时了, 可能被墙了
+http://yanhaijing.com/ 网络请求超时了, 可能被墙了
+http://ideazhao.com/ 网络请求超时了, 可能被墙了
+https://www.phodal.com/ 网络请求超时了, 可能被墙了
+https://lutaonan.com/ 网络请求超时了, 可能被墙了
+http://www.soulteary.com/ 网络请求超时了, 可能被墙了
+http://www.liaoxuefeng.com/ 网络请求超时了, 可能被墙了
+http://zichi.date/ 网络请求超时了, 可能被墙了
+http://blog.aijc.net/ 网络请求失败 undefined Request failed with status code 404
+http://evilcos.me/ 网络请求超时了, 可能被墙了
+http://blog.howie6879.cn/ 网络请求失败 ECONNRESET read ECONNRESET
+https://www.villainhr.com/ 网络请求失败 ECONNRESET read ECONNRESET
+http://sbco.cc/ 网络请求超时了, 可能被墙了
+http://www.cnblogs.com/coco1s 网络请求超时了, 可能被墙了
+https://j11y.io/ 网络请求失败 UNABLE_TO_VERIFY_LEAF_SIGNATURE unable to verify the first certificate
+http://www.tangshuang.net/ 网络请求失败 EPROTO write EPROTO 140735800148864:error:1408F10B:SSL routines:ssl3_get_record:wrong version number:../deps/openssl/openssl/ssl/record/ssl3_record.c:332:
+
+http://zhangwenli.com/ 网络请求超时了, 可能被墙了
+http://blog.topspeedsnail.com/ 网络请求失败 ECONNRESET socket hang up
+http://friskit.me/ 网络请求失败 ECONNRESET socket hang up
+http://zyy1217.com/ 网络请求超时了, 可能被墙了
+http://blog.zhanglun.me/ 网络请求失败 undefined Request failed with status code 403
+https://lijiarui.github.io/ 网络请求超时了, 可能被墙了
+http://alwa.info/ 网络请求超时了, 可能被墙了
+https://jex.im/ 网络请求失败 undefined Request failed with status code 404
+https://leoeatle.github.io/techBlog/ 网络请求失败 undefined Request failed with status code 404
+http://blog.huangz.me/ 网络请求超时了, 可能被墙了
+https://overreacted.io/ 网络请求超时了, 可能被墙了
+http://www.ayqy.net/blog/ 网络请求超时了, 可能被墙了
+https://gitai.me/ 网络请求超时了, 可能被墙了
+https://ixyzero.com/blog/ 网络请求超时了, 可能被墙了
+https://farer.org/ 网络请求超时了, 可能被墙了
+http://news.discovery.com/human/hetitleh 网络请求失败 ECONNRESET socket hang up
+http://naotu.baidu.com/ 网络请求失败 EPROTO write EPROTO 140735800148864:error:1408F10B:SSL routines:ssl3_get_record:wrong version number:../deps/openssl/openssl/ssl/record/ssl3_record.c:332:
+
+http://app.xunjiepdf.com/ 网络请求超时了, 可能被墙了
+https://www.pdfpocket.com/ 网络请求失败 ECONNRESET Client network socket disconnected before secure TLS connection was established
+http://cn.epubee.com/ 网络请求失败 undefined Request failed with status code 404
+https://kankandou.com/ 网络请求超时了, 可能被墙了
+http://kaopu.so/ 网络请求超时了, 可能被墙了
+http://www.kindlepush.com/main 网络请求超时了, 可能被墙了
+https://www.owllook.net/ 网络请求失败 ECONNRESET Client network socket disconnected before secure TLS connection was established
+https://zhuanlan.zhihu.com/p/29837972 网络请求失败 undefined Request failed with status code 404
+https://v2mm.tech/ 网络请求失败 CERT_HAS_EXPIRED certificate has expired
+https://bbs.kechuang.org/ 网络请求失败 ERR_TLS_CERT_ALTNAME_INVALID Hostname/IP does not match certificate's altnames: Host: bbs.kechuang.org. is not in the cert's altnames: DNS:www.deepace.co, DNS:deepace.co
+http://www.dashangcloud.com/static/ds.js 网络请求超时了, 可能被墙了

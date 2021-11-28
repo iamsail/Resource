@@ -1,0 +1,17 @@
+undefined 网络请求失败 ERR_INVALID_ARG_TYPE The "url" argument must be of type string. Received undefined
+https://weekly.75team.com/ 网络请求失败 UNABLE_TO_VERIFY_LEAF_SIGNATURE unable to verify the first certificate
+http://efe.baidu.com/ 网络请求失败 EPROTO write EPROTO 140735794455424:error:1408F10B:SSL routines:ssl3_get_record:wrong version number:../deps/openssl/openssl/ssl/record/ssl3_record.c:332:
+
+https://codepen.io/ 网络请求失败 undefined Request failed with status code 403
+https://codepen.io/ 网络请求失败 undefined Request failed with status code 403
+https://codepen.io/ 网络请求失败 undefined Request failed with status code 403
+https://codepen.io/ 网络请求失败 undefined Request failed with status code 403
+https://codepen.io/ 网络请求失败 undefined Request failed with status code 403
+http://efe.baidu.com/ 网络请求失败 EPROTO write EPROTO 140735794455424:error:1408F10B:SSL routines:ssl3_get_record:wrong version number:../deps/openssl/openssl/ssl/record/ssl3_record.c:332:
+
+http://caniuse.com/ 网络请求失败 EPROTO write EPROTO 140735794455424:error:1408F10B:SSL routines:ssl3_get_record:wrong version number:../deps/openssl/openssl/ssl/record/ssl3_record.c:332:
+
+http://www.thinkphp.cn 网络请求失败 undefined Request failed with status code 503
+https://man.linuxde.net/ 网络请求超时了, 可能被墙了
+http://www.ituring.com.cn/ 网络请求失败 EPROTO write EPROTO 140735794455424:error:1408F10B:SSL routines:ssl3_get_record:wrong version number:../deps/openssl/openssl/ssl/record/ssl3_record.c:332:
+
